@@ -28,4 +28,8 @@
 
 Optionally add to PATH(not necessary)
 
+# Using
+- scarycommit init - Creates a yml configuration in which you must specify the API key and AI model
+- scarycommit commit - commits automatically (need to add the necessary files to the index git add)
+
 

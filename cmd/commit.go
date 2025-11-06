@@ -7,6 +7,7 @@ import (
 	"ScaryCommit/internal/prompt"
 	"context"
 	"fmt"
+	"strings"
 
 	"github.com/spf13/cobra"
 )
@@ -43,7 +44,15 @@ var commitCmd = &cobra.Command{
 		promptToAI := prompt.BuildPrompt(trimmedDiff, cfg.Style, cfg.Language)
 
 		// Initing llm (will be MORE)
-		client := llm.NewOpenRouter(cfg.APIKey, cfg.Model)
+		var client llm.LLMProvider
+		if cfg.Provider == strings.ToLower("openrouter") {
+			client = llm.NewOpenRouter(cfg.APIKey, cfg.Model)
+		}
+		if cfg.Provider == strings.ToLower("deepseek") {
+			client = llm.NewDeepSeek(cfg.APIKey, cfg.Model)
+		} else {
+			fmt.Println("Incorrect input or provider is not yet supported")
+		}
 
 		// Generating msg
 		message, err := client.Generate(ctx, promptToAI, llm.GenerateOptions{

@@ -15,16 +15,16 @@
 # Installation
 
 # For Linux
-git clone https://github.com/Bastion-Scar/ScaryCommit.git
-cd ScaryCommit
-go build -o scarycommit main.go
-sudo mv scarycommit /usr/local/bin/
+- git clone https://github.com/Bastion-Scar/ScaryCommit.git
+- cd ScaryCommit
+- go build -o scarycommit main.go
+- sudo mv scarycommit /usr/local/bin/
 
 # For Windows
 
-git clone https://github.com/Bastion-Scar/ScaryCommit.git
-cd ScaryCommit
-go build -o scarycommit.exe main.go
+- git clone https://github.com/Bastion-Scar/ScaryCommit.git
+- cd ScaryCommit
+- go build -o scarycommit.exe main.go
 
 Optionally add to PATH(not necessary)
 

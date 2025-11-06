@@ -1,1 +1,31 @@
-Тут будет ридми когда я захочу его сделать (скоро скоро)
+# ScaryCommit
+
+**ScaryCommit** is a CLI tool written in Go that uses **AI** to generate meaningful and stylish commit messages based on the content of your Git diff.  It analyzes the changes, consults an LLM (such as OpenRouter), and creates a "ready to go" commit 
+
+# Features
+
+- 🔍 Analyzes staged changes (`git diff --cached`)
+- 🤖 Generates commit messages using AI (via OpenRouter API)
+- 💬 Supports different commit styles (like Conventional)
+- 🗣️ Supports languages (`en`, later — `ru`, `jp`, etc)
+- 🪄 Minimalistic CLI interface in Cobra
+- 💾 Automatic configuration initialization (`scarycommit init`)
+- 🧠 Secure confirmation before creating a commit
+
+# Installation
+
+# For Linux
+git clone https://github.com/Bastion-Scar/ScaryCommit.git
+cd ScaryCommit
+go build -o scarycommit main.go
+sudo mv scarycommit /usr/local/bin/
+
+# For Windows
+
+git clone https://github.com/Bastion-Scar/ScaryCommit.git
+cd ScaryCommit
+go build -o scarycommit.exe main.go
+
+Optionally add to PATH(not necessary)
+
+

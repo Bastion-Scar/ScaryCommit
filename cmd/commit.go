@@ -12,6 +12,8 @@ import (
 	"github.com/spf13/cobra"
 )
 
+var noConfirm bool
+
 // Commit command
 var commitCmd = &cobra.Command{
 	Use:   "commit",
@@ -47,9 +49,10 @@ var commitCmd = &cobra.Command{
 		var client llm.LLMProvider
 		if cfg.Provider == strings.ToLower("openrouter") {
 			client = llm.NewOpenRouter(cfg.APIKey, cfg.Model)
-		}
-		if cfg.Provider == strings.ToLower("deepseek") {
+
+		} else if cfg.Provider == strings.ToLower("deepseek") {
 			client = llm.NewDeepSeek(cfg.APIKey, cfg.Model)
+
 		} else {
 			fmt.Println("Incorrect input or provider is not yet supported")
 		}
@@ -67,12 +70,14 @@ var commitCmd = &cobra.Command{
 		fmt.Println()
 
 		// Asking user for confirm
-		fmt.Print("Do you want to use this message? (y/N): ")
-		var confirm string
-		fmt.Scanln(&confirm)
-		if confirm != "y" && confirm != "Y" {
-			fmt.Println("❌ Commit canceled.")
-			return nil
+		if !noConfirm {
+			fmt.Print("Do you want to use this message? (y/N): ")
+			var confirm string
+			fmt.Scanln(&confirm)
+			if confirm != "y" && confirm != "Y" {
+				fmt.Println("❌ Commit canceled.")
+				return nil
+			}
 		}
 
 		// Creating commit
@@ -83,4 +88,8 @@ var commitCmd = &cobra.Command{
 		fmt.Println("✅ Commit created successfully!")
 		return nil
 	},
+}
+
+func init() {
+	commitCmd.Flags().BoolVar(&noConfirm, "no-confirm", false, "Skip confirmation before committing")
 }

@@ -65,15 +65,23 @@ var commitCmd = &cobra.Command{
 			return fmt.Errorf("AI generation failed: %w", err)
 		}
 
-		fmt.Println("🤖 Suggested commit message:\n")
+		fmt.Println("🤖 Suggested commit message:")
+		fmt.Println()
 		fmt.Println(message)
 		fmt.Println()
 
 		// Asking user for confirm
 		if !noConfirm {
 			fmt.Print("Do you want to use this message? (y/N): ")
+
 			var confirm string
-			fmt.Scanln(&confirm)
+			_, err := fmt.Scanln(&confirm)
+
+			if err != nil {
+				fmt.Printf("❌ Failed to read input: %v\n", err)
+				return nil
+			}
+
 			if confirm != "y" && confirm != "Y" {
 				fmt.Println("❌ Commit canceled.")
 				return nil

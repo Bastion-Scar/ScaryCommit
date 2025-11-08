@@ -1,4 +1,4 @@
-# ScaryCommit v0.1.3
+# ScaryCommit v0.2.0
 
 **ScaryCommit** is a CLI tool written in Go that uses **AI** to generate meaningful and stylish commit messages based on the content of your Git diff.  It analyzes the changes, consults an LLM (such as OpenRouter), and creates a "ready to go" commit 
 

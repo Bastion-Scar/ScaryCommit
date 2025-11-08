@@ -89,7 +89,7 @@ var commitCmd = &cobra.Command{
 		}
 
 		// Creating commit
-		if err := git.Commit(message); err != nil {
+		if err := git.Commit("", message); err != nil {
 			return fmt.Errorf("git commit failed: %w", err)
 		}
 

@@ -28,4 +28,5 @@ func Execute() {
 func init() {
 	rootCmd.AddCommand(initCmd)
 	rootCmd.AddCommand(commitCmd)
+	rootCmd.AddCommand(autoCmd)
 }

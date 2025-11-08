@@ -132,7 +132,7 @@ and commits them sequentially to avoid Git concurrency issues.`,
 			}
 
 			// Commit confirmed file
-			if err := git.Commit(r.file, r.message); err != nil {
+			if err := git.CommitAuto(r.file, r.message); err != nil {
 				fmt.Printf("❌ [%s] commit failed: %v\n", r.file, err)
 			} else {
 				fmt.Printf("✅ [%s] committed successfully!\n", r.file)

@@ -9,7 +9,7 @@ import (
 )
 
 var rootCmd = &cobra.Command{
-	Use:   "scarycommit",
+	Use:   "sco",
 	Short: "ScaryCommit — AI commit message generator",
 	Long:  "Generates commit messages from staged git changes using LLMs like DeepSeek or OpenRouter.",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {

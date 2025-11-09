@@ -32,34 +32,16 @@ Optionally add to PATH(not necessary)
 - sco init - Creates a yml configuration in which you must specify the API key and AI model
 - sco commit - commits automatically (need to add the necessary files to the index git add)
 
-# LINUX/MAC. If you are unable to download Go SDK for go build:
-Option 1
+# LINUX/MAC. If you are unable to download Go SDK for go build(DOCKER REQUIRED):
 - sudo chmod +x setup.sh
 - ./setup.sh
 
-Option 2
-- make build
-- sudo cp sco-linux /usr/local/bin/sco
-- sudo cp sco-macos /usr/local/bin/sco   for Mac
-- sudo chmod +x /usr/local/bin/sco
-
-
 This will install the binary without installing Go
 
-# WINDOWS. If you are unable to download Go SDK for go build:
-Option 1
+# WINDOWS. If you are unable to download Go SDK for go build(DOCKER REQUIRED):
 - come to PowerShell and type: Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy RemoteSigned
 - come to scarycommit folder like: cd C:\path\to\ScaryCommit
 - .\setup.ps1
 - [Environment]::SetEnvironmentVariable("PATH", "$env:USERPROFILE\bin;$env:PATH", "User") 
 - restart PowerShell
 - You can use sco
-
-Option 2
-- make build
-- $InstallDir = "$env:USERPROFILE\bin"
-- mkdir $InstallDir -Force
-- copy sco-windows.exe $InstallDir\sco.exe
-- [Environment]::SetEnvironmentVariable("PATH", "$InstallDir;$env:PATH", "User")
-- restart powershell
-- Use sco

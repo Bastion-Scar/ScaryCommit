@@ -4,7 +4,7 @@ import "fmt"
 
 func PrintBanner() { //Greetings
 	fmt.Println(`
-ScaryCommit v0.2.0
+ScaryCommit v0.2.1
 -----------------------
 AI commit message generator`)
 }

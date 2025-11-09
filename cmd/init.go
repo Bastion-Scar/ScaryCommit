@@ -12,7 +12,7 @@ var initCmd = &cobra.Command{
 	Use:   "init",
 	Short: "Initialize ScaryCommit configuration",
 	Long: `Creates a default configuration file for ScaryCommit 
-in your home directory (ScaryCommit/deepseekCfg.yaml). 
+in your home directory (ScaryCommit/scarycommit.yaml). 
 Use this before your first run to set up provider and API key`,
 
 	Run: func(cmd *cobra.Command, args []string) {

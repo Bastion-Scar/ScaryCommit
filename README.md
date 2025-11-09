@@ -1,4 +1,4 @@
-# ScaryCommit v0.2.0
+# ScaryCommit v0.2.1
 
 **ScaryCommit** is a CLI tool written in Go that uses **AI** to generate meaningful and stylish commit messages based on the content of your Git diff.  It analyzes the changes, consults an LLM (such as OpenRouter), and creates a "ready to go" commit 
 
@@ -32,4 +32,8 @@ Optionally add to PATH(not necessary)
 - sco init - Creates a yml configuration in which you must specify the API key and AI model
 - sco commit - commits automatically (need to add the necessary files to the index git add)
 
+# If you are unable to download Go SDK for go build (DOCKER REQUIRED):
+- sudo chmod +x setup.sh
+- ./setup.sh
 
+This will install the binary via a Docker container without installing Go

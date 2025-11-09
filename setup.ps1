@@ -15,16 +15,16 @@ if (-Not (Test-Path $InstallDir)) {
     New-Item -ItemType Directory -Path $InstallDir | Out-Null
 }
 
-# Build docker image for windows binary
+# Build docker image
 Write-Host "Building docker image..."
 docker build -t scarycommit-builder .
 
 # Create a temporary container
 $container = docker create scarycommit-builder
 
-# Copy the binary to install directory
+# Copy the Linux binary to install directory
 Write-Host "Copying binary to $InstallDir ..."
-docker cp "$container:/scarycommit/scarycommit.exe" "$InstallDir\scarycommit.exe"
+docker cp "${container}:/usr/local/bin/sco" "$InstallDir\sco.exe"
 
 # Remove the temporary container
 docker rm $container | Out-Null
@@ -37,4 +37,4 @@ if ($env:PATH -notlike "*$InstallDir*") {
     Write-Host "You can add it via System Properties → Environment Variables → PATH."
 }
 
-Write-Host "Done! You can now run: scarycommit.exe init"
+Write-Host "Done! You can now run: sco.exe"

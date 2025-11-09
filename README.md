@@ -9,7 +9,7 @@
 - 💬 Supports different commit styles (like Conventional)
 - 🗣️ Supports languages (`en`, later — `ru`, `jp`, etc)
 - 🪄 Minimalistic CLI interface in Cobra
-- 💾 Automatic configuration initialization (`scarycommit init`)
+- 💾 Automatic configuration initialization (`sco init`)
 - 🧠 Secure confirmation before creating a commit
 
 # Installation
@@ -17,19 +17,19 @@
 # For Linux
 - git clone https://github.com/Bastion-Scar/ScaryCommit.git
 - cd ScaryCommit
-- go build -o scarycommit main.go
-- sudo mv scarycommit /usr/local/bin/
+- go build -o sco main.go
+- sudo mv sco /usr/local/bin/
 
 # For Windows
 
 - git clone https://github.com/Bastion-Scar/ScaryCommit.git
 - cd ScaryCommit
-- go build -o scarycommit.exe main.go
+- go build -o sco.exe main.go
 
 Optionally add to PATH(not necessary)
 
 # Using
-- scarycommit init - Creates a yml configuration in which you must specify the API key and AI model
-- scarycommit commit - commits automatically (need to add the necessary files to the index git add)
+- sco init - Creates a yml configuration in which you must specify the API key and AI model
+- sco commit - commits automatically (need to add the necessary files to the index git add)
 
 

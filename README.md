@@ -31,7 +31,8 @@ Optionally add to PATH(not necessary)
 # Using
 - sco init - Creates a yml configuration in which you must specify the API key and AI model
 - sco commit - commits automatically (need to add the necessary files to the index git add)
-
+- sco auto - commits every file in 1 command (needs agreement but with --no-confirm flag commits everything automatically
+  
 # LINUX/MAC. If you are unable to download Go SDK for go build(DOCKER REQUIRED):
 - sudo chmod +x setup.sh
 - ./setup.sh
